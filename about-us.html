@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | InsureNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for about page */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/about-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .mission-vision {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .mv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .mv-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .mv-card i {
+            font-size: 3rem;
+            color: #f7931e;
+            margin-bottom: 20px;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .stats-section {
+            padding: 60px 0;
+            background-color: #f7931e;
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 22 1234 5678</span>
+                    <span><i class="fas fa-envelope"></i> info@insurenow.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container header-content">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon">IN</div>
+                    <div class="logo-text">Insure<span>Now</span></div>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="insurance-plans.html">Insurance Plans <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="health-insurance.html">Health Insurance</a></li>
+                                <li><a href="life-insurance.html">Life Insurance</a></li>
+                                <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                                <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <a href="get-quote.html" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About InsureNow</h1>
+            <p>Your trusted partner for all insurance needs since 2010</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>How we became one of India's most trusted insurance advisors</p>
+            </div>
+            
+            <div class="mv-container">
+                <div class="mv-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Our Beginning</h3>
+                    <p>Founded in 2010 with a vision to simplify insurance for everyone. Started with just 3 employees and now serving over 50,000 customers nationwide.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide transparent, affordable insurance solutions tailored to each customer's needs while delivering exceptional service at every step.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become India's most customer-centric insurance platform, making quality protection accessible to every family and business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Leadership</h2>
+                <p>The experienced professionals guiding InsureNow</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
+                    <div class="team-info">
+                        <h3>Rahul Sharma</h3>
+                        <p>Founder & CEO</p>
+                        <p>20+ years in insurance industry</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel">
+                    <div class="team-info">
+                        <h3>Priya Patel</h3>
+                        <p>Chief Operations Officer</p>
+                        <p>Specializes in health insurance</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Amit Desai">
+                    <div class="team-info">
+                        <h3>Amit Desai</h3>
+                        <p>Head of Claims</p>
+                        <p>15 years claims experience</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Neha Gupta">
+                    <div class="team-info">
+                        <h3>Neha Gupta</h3>
+                        <p>Customer Experience Head</p>
+                        <p>Dedicated to client satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>By The Numbers</h2>
+                <p>Our achievements in over a decade of service</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>50K+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Insurance Partners</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Claim Settlement Ratio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="insurance-plans.html">Insurance Plans</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Insurance Products</h3>
+                    <ul>
+                        <li><a href="health-insurance.html">Health Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                        <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> InsureNow Center, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 22 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@insurenow.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InsureNow. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Insurance | InsureNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .motor-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/motor-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .coverage-types {
+            padding: 80px 0;
+        }
+        
+        .coverage-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .coverage-tab {
+            padding: 12px 25px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .coverage-tab.active, .coverage-tab:hover {
+            border-bottom: 3px solid #f7931e;
+            color: #f7931e;
+        }
+        
+        .coverage-content {
+            display: none;
+        }
+        
+        .coverage-content.active {
+            display: block;
+        }
+        
+        .coverage-details {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .coverage-details h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .coverage-details ul {
+            margin-bottom: 25px;
+        }
+        
+        .coverage-details li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .coverage-details li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #f7931e;
+        }
+        
+        .claim-process {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #f7931e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .discount-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .discount-banner {
+            background: linear-gradient(135deg, #f7931e, #ff5722);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .discount-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 22 1234 5678</span>
+                    <span><i class="fas fa-envelope"></i> info@insurenow.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container header-content">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon">IN</div>
+                    <div class="logo-text">Insure<span>Now</span></div>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="insurance-plans.html">Insurance Plans <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="health-insurance.html">Health Insurance</a></li>
+                                <li><a href="life-insurance.html">Life Insurance</a></li>
+                                <li><a href="motor-insurance.html" class="active">Motor Insurance</a></li>
+                                <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <a href="get-quote.html" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Motor Hero Section -->
+    <section class="motor-hero">
+        <div class="container">
+            <h1>Motor Insurance Solutions</h1>
+            <p>Protect your vehicle with comprehensive coverage at competitive rates</p>
+        </div>
+    </section>
+
+    <!-- Coverage Types -->
+    <section class="coverage-types">
+        <div class="container">
+            <div class="section-title">
+                <h2>Types of Motor Insurance</h2>
+                <p>Choose the right coverage for your vehicle</p>
+            </div>
+            
+            <div class="coverage-tabs">
+                <div class="coverage-tab active" data-tab="comprehensive">Comprehensive</div>
+                <div class="coverage-tab" data-tab="thirdparty">Third Party</div>
+                <div class="coverage-tab" data-tab="zero-dep">Zero Depreciation</div>
+                <div class="coverage-tab" data-tab="electric">Electric Vehicle</div>
+            </div>
+            
+            <div class="coverage-content active" id="comprehensive">
+                <div class="coverage-details">
+                    <h3>Comprehensive Motor Insurance</h3>
+                    <p>The most complete coverage that protects against both third-party liabilities and damage to your own vehicle.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Covers damage to your vehicle from accidents, natural calamities, and theft</li>
+                        <li>Includes third-party liability coverage</li>
+                        <li>Personal accident cover for owner-driver</li>
+                        <li>Option to add riders like zero depreciation, engine protection</li>
+                        <li>Cashless repairs at network garages</li>
+                        <li>24/7 roadside assistance available</li>
+                    </ul>
+                    
+                    <a href="get-quote.html" class="btn">Get Comprehensive Quote</a>
+                </div>
+            </div>
+            
+            <div class="coverage-content" id="thirdparty">
+                <div class="coverage-details">
+                    <h3>Third Party Motor Insurance</h3>
+                    <p>Mandatory coverage that protects against legal liabilities to third parties.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Covers injury/death of third party</li>
+                        <li>Covers damage to third party property</li>
+                        <li>Mandatory as per Motor Vehicles Act</li>
+                        <li>Lower premium than comprehensive policy</li>
+                        <li>Does not cover damage to your own vehicle</li>
+                    </ul>
+                    
+                    <a href="get-quote.html" class="btn">Get Third Party Quote</a>
+                </div>
+            </div>
+            
+            <!-- Other coverage types would be here -->
+        </div>
+    </section>
+
+    <!-- Claim Process -->
+    <section class="claim-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Motor Claim Process</h2>
+                <p>Simple and hassle-free claim settlement</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Inform Us</h3>
+                    <p>Call our 24/7 helpline or inform through our app immediately after the incident</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Documentation</h3>
+                    <p>Submit required documents like driving license, RC copy, FIR (if applicable)</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Inspection</h3>
+                    <p>Our surveyor will inspect the vehicle damage</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Repair/Settlement</h3>
+                    <p>Get cashless repairs at network garage or reimbursement for repairs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discount Section -->
+    <section class="discount-section">
+        <div class="container">
+            <div class="discount-banner">
+                <h2>Renew Your Policy Now & Save 20%</h2>
+                <p>Limited time offer for online renewals before policy expiry</p>
+                <div class="timer" id="countdown">
+                    02:15:36 <!-- Hours:Minutes:Seconds -->
+                </div>
+                <a href="get-quote.html" class="btn" style="background: white; color: #f7931e;">Renew Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="insurance-plans.html">Insurance Plans</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Insurance Products</h3>
+                    <ul>
+                        <li><a href="health-insurance.html">Health Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                        <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> InsureNow Center, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 22 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@insurenow.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InsureNow. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.coverage-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelector('.coverage-tab.active').classList.remove('active');
+                tab.classList.add('active');
+                
+                const tabId = tab.getAttribute('data-tab');
+                document.querySelector('.coverage-content.active').classList.remove('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>

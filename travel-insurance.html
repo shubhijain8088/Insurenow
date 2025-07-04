@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Insurance | InsureNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Page-specific styles */
+        .travel-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/travel-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .travel-plans {
+            padding: 80px 0;
+        }
+        
+        .plan-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .plan-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .plan-content {
+            padding: 25px;
+        }
+        
+        .coverage-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .coverage-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .coverage-item i {
+            font-size: 2.5rem;
+            color: #f7931e;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 22 1234 5678</span>
+                    <span><i class="fas fa-envelope"></i> info@insurenow.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container header-content">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon">IN</div>
+                    <div class="logo-text">Insure<span>Now</span></div>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="insurance-plans.html">Insurance Plans <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="health-insurance.html">Health Insurance</a></li>
+                                <li><a href="life-insurance.html">Life Insurance</a></li>
+                                <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                                <li><a href="travel-insurance.html" class="active">Travel Insurance</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <a href="get-quote.html" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="travel-hero">
+        <div class="container">
+            <h1>Travel Insurance Protection</h1>
+            <p>Explore the world with confidence knowing you're covered for unexpected events</p>
+        </div>
+    </section>
+
+    <!-- Travel Plans -->
+    <section class="travel-plans">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Travel Insurance Plans</h2>
+                <p>Choose the right coverage for your journey</p>
+            </div>
+            
+            <div class="plan-cards">
+                <div class="plan-card">
+                    <img src="images/individual-travel.jpg" alt="Individual Travel Insurance">
+                    <div class="plan-content">
+                        <h3>Individual Plan</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Single traveler coverage</li>
+                            <li><i class="fas fa-check"></i> Trip cancellation protection</li>
+                            <li><i class="fas fa-check"></i> Medical emergency coverage</li>
+                            <li><i class="fas fa-check"></i> Baggage loss protection</li>
+                        </ul>
+                        <a href="get-quote.html" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <img src="images/family-travel.jpg" alt="Family Travel Insurance">
+                    <div class="plan-content">
+                        <h3>Family Plan</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Covers 2 adults + 2 children</li>
+                            <li><i class="fas fa-check"></i> Child coverage at no extra cost</li>
+                            <li><i class="fas fa-check"></i> 24/7 emergency assistance</li>
+                            <li><i class="fas fa-check"></i> Trip interruption coverage</li>
+                        </ul>
+                        <a href="get-quote.html" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <img src="images/senior-travel.jpg" alt="Senior Travel Insurance">
+                    <div class="plan-content">
+                        <h3>Senior Citizen Plan</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Specialized for travelers 65+</li>
+                            <li><i class="fas fa-check"></i> Pre-existing condition coverage</li>
+                            <li><i class="fas fa-check"></i> Higher medical limits</li>
+                            <li><i class="fas fa-check"></i> Cancel for any reason option</li>
+                        </ul>
+                        <a href="get-quote.html" class="btn">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section class="coverage-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What's Covered</h2>
+                <p>Comprehensive protection for your travels</p>
+            </div>
+            
+            <div class="coverage-grid">
+                <div class="coverage-item">
+                    <i class="fas fa-plane"></i>
+                    <h3>Trip Cancellation</h3>
+                    <p>Reimbursement for non-refundable expenses if you need to cancel for covered reasons</p>
+                </div>
+                
+                <div class="coverage-item">
+                    <i class="fas fa-briefcase-medical"></i>
+                    <h3>Medical Emergencies</h3>
+                    <p>Coverage for hospital stays, doctor visits, and emergency medical evacuation</p>
+                </div>
+                
+                <div class="coverage-item">
+                    <i class="fas fa-suitcase"></i>
+                    <h3>Lost Baggage</h3>
+                    <p>Compensation for lost, stolen, or delayed baggage and personal items</p>
+                </div>
+                
+                <div class="coverage-item">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>Trip Interruption</h3>
+                    <p>Coverage if you need to cut your trip short for covered reasons</p>
+                </div>
+                
+                <div class="coverage-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>24/7 Assistance</h3>
+                    <p>Global emergency assistance services available anytime, anywhere</p>
+                </div>
+                
+                <div class="coverage-item">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Personal Liability</h3>
+                    <p>Protection if you accidentally injure someone or damage property</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="insurance-plans.html">Insurance Plans</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Insurance Products</h3>
+                    <ul>
+                        <li><a href="health-insurance.html">Health Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                        <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> InsureNow Center, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 22 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@insurenow.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for travel tips and insurance updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InsureNow. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

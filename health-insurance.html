@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance | InsureNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .health-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/health-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .health-benefits {
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-card i {
+            font-size: 3rem;
+            color: #f7931e;
+            margin-bottom: 20px;
+        }
+        
+        .coverage-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .coverage-list {
+            columns: 2;
+            column-gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .coverage-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            break-inside: avoid;
+        }
+        
+        .coverage-list li:before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #f7931e;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .faq-question:after {
+            content: '\f078';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active:after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            background: #f9f9f9;
+        }
+        
+        .faq-question.active + .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        @media (max-width: 768px) {
+            .coverage-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 22 1234 5678</span>
+                    <span><i class="fas fa-envelope"></i> info@insurenow.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container header-content">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon">IN</div>
+                    <div class="logo-text">Insure<span>Now</span></div>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="insurance-plans.html">Insurance Plans <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="health-insurance.html" class="active">Health Insurance</a></li>
+                                <li><a href="life-insurance.html">Life Insurance</a></li>
+                                <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                                <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <a href="get-quote.html" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Health Hero Section -->
+    <section class="health-hero">
+        <div class="container">
+            <h1>Health Insurance Plans</h1>
+            <p>Comprehensive medical coverage for you and your family</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="health-benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Health Insurance is Essential</h2>
+                <p>Protect yourself from rising medical costs and unexpected health issues</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Financial Protection</h3>
+                    <p>Safeguard your savings from high medical expenses during emergencies or planned treatments.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Cashless Treatment</h3>
+                    <p>Access to network hospitals where you don't need to pay upfront for covered treatments.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Preventive Care</h3>
+                    <p>Many plans include free health checkups to detect potential health issues early.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h3>Tax Benefits</h3>
+                    <p>Premium payments qualify for tax deductions under Section 80D of the Income Tax Act.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Quality Healthcare</h3>
+                    <p>Access to top hospitals and specialists without worrying about costs.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Family Security</h3>
+                    <p>Ensure your loved ones get the best medical care when they need it most.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section class="coverage-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What's Covered</h2>
+                <p>Our health insurance plans typically include these benefits</p>
+            </div>
+            
+            <ul class="coverage-list">
+                <li>Hospitalization expenses (room, ICU, nursing)</li>
+                <li>Pre and post hospitalization (30/60 days typically)</li>
+                <li>Day care procedures (no 24-hour hospitalization needed)</li>
+                <li>Ambulance charges</li>
+                <li>Organ donor expenses</li>
+                <li>Modern treatments (robotic surgery, stem cell therapy)</li>
+                <li>AYUSH treatments (Ayurveda, Yoga, Unani, Siddha, Homeopathy)</li>
+                <li>Domiciliary hospitalization (home treatment when hospital not possible)</li>
+                <li>Health checkups (usually once per policy year)</li>
+                <li>Maternity benefits (in specific plans)</li>
+                <li>Newborn baby cover (from day 1 in some plans)</li>
+                <li>Critical illness cover (optional add-on)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common queries about health insurance</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is the waiting period for pre-existing diseases?</div>
+                    <div class="faq-answer">
+                        <p>Most health insurance plans have a waiting period of 2-4 years for pre-existing diseases. This means any condition you had before buying the policy will only be covered after this waiting period. Some plans offer reduced waiting periods at higher premiums.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I get coverage for my parents who are senior citizens?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer special health insurance plans for senior citizens. While the premiums are higher due to increased health risks, these plans provide comprehensive coverage tailored to the needs of elderly individuals, including higher sum insured options and coverage for age-related conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is the difference between individual and family floater plans?</div>
+                    <div class="faq-answer">
+                        <p>An individual plan covers only one person, while a family floater plan covers the entire family (typically spouse, children, and sometimes parents) under a single sum insured. Family floaters are generally more cost-effective but the coverage is shared among all members.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Are maternity expenses covered in health insurance?</div>
+                    <div class="faq-answer">
+                        <p>Maternity coverage varies by plan. Some comprehensive health insurance policies include maternity benefits after a waiting period (usually 2-4 years), while others offer it as an optional add-on. There are also specific maternity plans available.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I port my existing health insurance policy to InsureNow?</div>
+                    <div class="faq-answer">
+                        <p>Yes, you can port your existing health insurance policy to another insurer including InsureNow without losing the benefits you've already accrued (like waiting period credits). The process must be initiated before your current policy's renewal date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section" style="background-color: #f7931e; color: white; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2>Ready to Protect Your Health?</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px;">Get a personalized health insurance quote in just 2 minutes.</p>
+            <a href="get-quote.html" class="btn" style="background: white; color: #f7931e;">Get Your Quote Now</a>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="insurance-plans.html">Insurance Plans</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Insurance Products</h3>
+                    <ul>
+                        <li><a href="health-insurance.html">Health Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                        <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> InsureNow Center, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 22 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@insurenow.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InsureNow. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

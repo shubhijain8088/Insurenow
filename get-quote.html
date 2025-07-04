@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote | InsureNow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Page-specific styles */
+        .quote-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/quote-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .quote-form-section {
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #f7931e;
+            color: #f7931e;
+        }
+        
+        .btn-outline:hover {
+            background: #f7931e;
+            color: white;
+        }
+        
+        .progress-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ddd;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .progress-step.active {
+            background: #f7931e;
+            color: white;
+        }
+        
+        .progress-step.completed {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .progress-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 20px;
+            height: 2px;
+            background: #ddd;
+        }
+        
+        .progress-step.active:not(:last-child):after,
+        .progress-step.completed:not(:last-child):after {
+            background: #f7931e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 22 1234 5678</span>
+                    <span><i class="fas fa-envelope"></i> info@insurenow.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container header-content">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon">IN</div>
+                    <div class="logo-text">Insure<span>Now</span></div>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="insurance-plans.html">Insurance Plans <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="health-insurance.html">Health Insurance</a></li>
+                                <li><a href="life-insurance.html">Life Insurance</a></li>
+                                <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                                <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <a href="get-quote.html" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="quote-hero">
+        <div class="container">
+            <h1>Get Your Insurance Quote</h1>
+            <p>Complete this simple form to receive personalized insurance quotes</p>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-form-section">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-step" data-step="4">4</div>
+            </div>
+            
+            <div class="form-container">
+                <form id="quoteForm">
+                    <!-- Step 1: Insurance Type -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Select Insurance Type</h2>
+                        <div class="form-group">
+                            <label for="insurance-type">What type of insurance do you need?</label>
+                            <select id="insurance-type" required>
+                                <option value="">Select Insurance Type</option>
+                                <option value="health">Health Insurance</option>
+                                <option value="life">Life Insurance</option>
+                                <option value="motor">Motor Insurance</option>
+                                <option value="travel">Travel Insurance</option>
+                                <option value="home">Home Insurance</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <button type="button" class="btn next-step">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Personal Information -->
+                    <div class="form-step" data-step="2">
+                        <h2>Personal Information</h2>
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step">Previous</button>
+                            <button type="button" class="btn next-step">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Insurance Details -->
+                    <div class="form-step" data-step="3">
+                        <h2>Insurance Details</h2>
+                        <div id="health-fields" class="insurance-details">
+                            <div class="form-group">
+                                <label for="coverage-amount">Coverage Amount (₹)</label>
+                                <select id="coverage-amount" required>
+                                    <option value="">Select Coverage Amount</option>
+                                    <option value="5">5 Lakhs</option>
+                                    <option value="10">10 Lakhs</option>
+                                    <option value="15">15 Lakhs</option>
+                                    <option value="20">20 Lakhs</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="family-members">Family Members to Cover</label>
+                                <input type="number" id="family-members" min="1" max="10" required>
+                            </div>
+                        </div>
+                        
+                        <div id="motor-fields" class="insurance-details" style="display:none;">
+                            <div class="form-group">
+                                <label for="vehicle-type">Vehicle Type</label>
+                                <select id="vehicle-type" required>
+                                    <option value="">Select Vehicle Type</option>
+                                    <option value="car">Car</option>
+                                    <option value="bike">Bike</option>
+                                    <option value="commercial">Commercial Vehicle</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-year">Manufacturing Year</label>
+                                <input type="number" id="vehicle-year" min="1990" max="2023" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step">Previous</button>
+                            <button type="button" class="btn next-step">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Review & Submit -->
+                    <div class="form-step" data-step="4">
+                        <h2>Review Your Information</h2>
+                        <div class="review-summary">
+                            <h3>Personal Information</h3>
+                            <p id="review-name"></p>
+                            <p id="review-email"></p>
+                            <p id="review-phone"></p>
+                            
+                            <h3>Insurance Details</h3>
+                            <p id="review-type"></p>
+                            <div id="review-details"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="checkbox" id="agree-terms" required>
+                            <label for="agree-terms">I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a></label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step">Previous</button>
+                            <button type="submit" class="btn">Submit Quote Request</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="insurance-plans.html">Insurance Plans</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Insurance Products</h3>
+                    <ul>
+                        <li><a href="health-insurance.html">Health Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                        <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> InsureNow Center, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 22 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@insurenow.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quote Support</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 22 9876 5432</li>
+                        <li><i class="fas fa-envelope"></i> quotes@insurenow.com</li>
+                        <li><i class="fas fa-comments"></i> Live Chat Available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InsureNow. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form step navigation
+        document.querySelectorAll('.next-step').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentStep = document.querySelector('.form-step.active');
+                const nextStep = currentStep.nextElementSibling;
+                
+                if (validateStep(currentStep)) {
+                    currentStep.classList.remove('active');
+                    nextStep.classList.add('active');
+                    
+                    updateProgressBar();
+                    updateReviewSummary();
+                }
+            });
+        });
+        
+        document.querySelectorAll('.prev-step').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentStep = document.querySelector('.form-step.active');
+                const prevStep = currentStep.previousElementSibling;
+                
+                currentStep.classList.remove('active');
+                prevStep.classList.add('active');
+                
+                updateProgressBar();
+            });
+        });
+        
+        // Insurance type toggle
+        document.getElementById('insurance-type').addEventListener('change', function() {
+            document.querySelectorAll('.insurance-details').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            if (this.value === 'health') {
+                document.getElementById('health-fields').style.display = 'block';
+            } else if (this.value === 'motor') {
+                document.getElementById('motor-fields').style.display = 'block';
+            }
+        });
+        
+        function validateStep(step) {
+            const inputs = step.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value) {
+                    input.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+            });
+            
+            return isValid;
+        }
+        
+        function updateProgressBar() {
+            const activeStep = document.querySelector('.form-step.active');
+            const stepNumber = parseInt(activeStep.dataset.step);
+            
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                
+                if (index + 1 === stepNumber) {
+                    step.classList.add('active');
+                } else if (index + 1 < stepNumber) {
+                    step.classList.add('completed');
+                }
+            });
+        }
+        
+        function updateReviewSummary() {
+            document.getElementById('review-name').textContent = 'Name: ' + document.getElementById('full-name').value;
+            document.getElementById('review-email').textContent = 'Email: ' + document.getElementById('email').value;
+            document.getElementById('review-phone').textContent = 'Phone: ' + document.getElementById('phone').value;
+            document.getElementById('review-type').textContent = 'Insurance Type: ' + 
+                document.getElementById('insurance-type').options[document.getElementById('insurance-type').selectedIndex].text;
+            
+            const detailsDiv = document.getElementById('review-details');
+            detailsDiv.innerHTML = '';
+            
+            if (document.getElementById('insurance-type').value === 'health') {
+                detailsDiv.innerHTML = `
+                    <p>Coverage Amount: ₹${document.getElementById('coverage-amount').value} Lakhs</p>
+                    <p>Family Members: ${document.getElementById('family-members').value}</p>
+                `;
+            } else if (document.getElementById('insurance-type').value === 'motor') {
+                detailsDiv.innerHTML = `
+                    <p>Vehicle Type: ${document.getElementById('vehicle-type').options[document.getElementById('vehicle-type').selectedIndex].text}</p>
+                    <p>Manufacturing Year: ${document.getElementById('vehicle-year').value}</p>
+                `;
+            }
+        }
+        
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your quote request has been submitted. We will contact you shortly.');
+            // In a real application, you would send the form data to a server here
+        });
+    </script>
+</body>
+</html>
